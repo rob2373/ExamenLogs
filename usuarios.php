@@ -61,12 +61,14 @@
       <td><?php echo $row['fecha_na'];?></td>
       <td><?php echo $row['Edad'];?></td>
       <td><?php echo $row['Telefono'];?></td>
-      <td> 
+      <?php   
+      echo "<td> 
         
-      <a href="" class='btn btn-warning'><img id="edit" src="css/img/iEdit.png" alt="" srcset=""></a>
-      <a href="" class='btn btn-danger'><img  id="edit"  src="css/img/iEliminar.png" alt="" srcset=""></a>
+      <a href='update.php?id={$row['id']}' class='btn btn-warning'><img id='edit' src='css/img/iEdit.png' alt='' srcset=''></a>
+      <a href='delete.php?id={$row['id']}'' class='btn btn-danger'><img  id='edit'  src='css/img/iEliminar.png' alt='' srcset=''></a>
 
-      </td>
+      </td>"
+      ?>
 
       </tr>
 
