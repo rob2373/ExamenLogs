@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/cute-clipart/64/user-male-circle.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+<style>  
+body{
+  background: #4e54c8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+ }
+</style>
+    <nav class="navbar navbar-expand-xl  navbar-dark menu-nawigacyjne">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Index</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="usuarios.php">usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registro.html">Registro</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+</head>
+<body id="body" class="align-items-center vh-100">
+    
+    
+        <div class="container mt-2 ">
+            
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="card  bg-light  mt-3 mb-1 shadow-lg p-3 mb-5 bg-body-tertiary rounded" >
+                     <!-- INICIO DE LA CARTA  -->
+                            <div class="card-body ">
+                            <div class="container">
+                                <div class="row text-center">
+                                
+                                    <h4 class="card-title ">Registro</h4>
+                                </div>
+                                <div class="row align-items-xl-center">
+                                   <div class="col-12 align-items-xl-center"> 
+                                       
+                    
+                                </div>
+                            </div>   
+                        
+                                    <div class="container mt justify-content-center">
+                                        <!-- inicio del formulario login-->
+                                        <form action="register.php" method="post">
+                                          <div class="form-group">
+                                            <label for="nombre"> <h6>Nombre</h6> </label>
+                                            <!-- Input nombre del usuario -->
+                                            <input type="text" class="form-control" id="nombre"   name="nombre" placeholder="Ingresa tu nombre "  required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="apellido"> <h6>Apellido/s</h6> </label>
+                                            <!-- Input nombre del apellido -->
+                                            <input type="text" class="form-control" id="apellido"  name="apellido" placeholder="Ingresa tu apellido/s " required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="email"> <h6>Correo electrónico</h6> </label>
+                                            <!-- Input nombre del correo -->
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email " required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="username"> <h6>Nombre de usuario</h6> </label>
+                                            <!-- Input nombre del  username-->
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="password"> <h6> Contraseña </h6></label>
+                                            <!-- Input contraseña -->
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                                          </div>
+                                        <div class="container">
+                                            <div class="row">
+                                             <div class="col-lg-6 ">
+                                                <div class="form-group">
+                                                    <label for="nacimiento"> <h6>Fecha de nacimiento</h6> </label>
+                                                    <!-- Input nombre del nacimiento -->
+                                                    <input type="date" class="form-control" id="nacimiento" name="nacimiento">
+                                                </div>
+                                             </div>
+                                        
+                                                <div class="col-lg-6 ">
+                                                    <div class="form-group">
+
+                                                        <label for="edad"> <h6>Edad</h6> </label>
+                                                        <!-- Input nombre del edad -->
+                                                        <input type="number" class="form-control" id="edad" name="edad"  required>
+                                                    </div>                                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telefono"> <h6> Teléfono </h6></label>
+                                            <!-- Input numTel -->
+                                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+                                          </div>
+                                          <div class="col-12 align-items-xl-center"> 
+                                            <!-- boton de Registros -->
+                                          <button  type="submit" class=" btn btn-primary mt-3 rounded mx-auto d-block"><h5>Registrar </h5></button> 
+                                          <a href="index.php"> <button type="button" class=" btn btn-primary mt-3 rounded mx-auto d-block"> <h5>Login</h5></button> </a>
+                    
+                                        </div>
+                                      
+                                        </form>
+                                        <!-- fin del login  -->
+                                      </div>
+                                
+                                
+                             </div>
+                         </div>
+                       </div>
+            </div>
+           
+            <div class="col-3"></div>
+
+         </div>
+                
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
