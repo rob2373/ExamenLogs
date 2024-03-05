@@ -9,14 +9,8 @@
      <link rel="shortcut icon" href="https://img.icons8.com/cute-clipart/64/user-male-circle.png" type="image/x-icon">
      <title>Document</title>
      <link rel="stylesheet" href="./css/style.css">
-     <style>  
-body{
-  background: #4e54c8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
- }
-</style>
-     
+     <link rel="stylesheet" href="./css/size.css">
+ 
  </head>
  <body>
  <?php include('includes/nav.php') ?>
@@ -45,6 +39,8 @@ body{
       <th class="bg-dark text-light" scope="col">FECHA</th>
       <th class="bg-dark text-light" scope="col">EDAD</th>
       <th class="bg-dark text-light" scope="col">TELEFONO</th>
+      <th class="bg-dark text-light" colspan="2" scope="col"> </th>
+
     </tr>
   </thead>
   <tbody>
@@ -65,6 +61,12 @@ body{
       <td><?php echo $row['fecha_na'];?></td>
       <td><?php echo $row['Edad'];?></td>
       <td><?php echo $row['Telefono'];?></td>
+      <td> 
+        
+      <a href="" class='btn btn-warning'><img id="edit" src="css/img/iEdit.png" alt="" srcset=""></a>
+      <a href="" class='btn btn-danger'><img  id="edit"  src="css/img/iEliminar.png" alt="" srcset=""></a>
+
+      </td>
 
       </tr>
 
