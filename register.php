@@ -1,30 +1,47 @@
 <?php
-include ('conexion.php');
+include('conexion.php');
 $conexion = conexion();
-
-
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
-$email = $_POST['email']; 
+$email = $_POST['email'];
 $usuario = $_POST['username'];
 $pass = sha1($_POST['password']);
 $fn = $_POST['nacimiento'];
 $edad = $_POST['edad'];
 $telefono = $_POST['telefono'];
-   
-$query= "INSERT INTO registro(nombre, apellido, email, usuario, password, fecha_na, Edad, Telefono) VALUES ('$nombre', '$apellido', '$email', '$usuario', '$pass', '$fn', '$edad', '$telefono')";
+
+$query = "INSERT INTO registro(nombre, apellido, email, usuario, password, fecha_na, Edad, Telefono) VALUES ('$nombre', '$apellido', '$email', '$usuario', '$pass', '$fn', '$edad', '$telefono')";
 $resultado = mysqli_query($conexion, $query);
-if($resultado){
+
+if ($resultado) {
+    // Registro de actividad después de la inserción exitosa
+    $accion = 'Alta';
+    $descripcion = 'Se agregó un nuevo registro a la base de datos: ' . $nombre . ' ' . $apellido;
+    LOGS($accion, $descripcion);
+
     echo "<h1>Datos insertados correctamente.</h1>";
     header('Location:./usuarios.php');
 } else {
     echo "<h1>Error al insertar datos: " . mysqli_error($conexion) . "</h1>";
 }
-echo($query);
-
-/* echo($nombre . $apellido . $email . $usuario . $pass . $fn . $edad . $telefono); */
+echo ($query);
 
 
 
+// Función para registrar una actividad en la base de datos
+function LOGS($accion, $descripcion)
+{
+    $conexion = conexion();
+    $sql = "INSERT INTO actividades (accion, descripcion, fecha) VALUES ('$accion', '$descripcion', NOW())";
+
+    // Ejecutar la consulta
+    if ($conexion->query($sql) === TRUE) {
+        echo "Actividad registrada con éxito.";
+    } else {
+        echo "Error al registrar la actividad: " . $conexion->error;
+    }
+    
+    $conexion->close();
+}
 ?>

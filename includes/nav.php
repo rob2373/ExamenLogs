@@ -18,6 +18,9 @@
            <li class="nav-item">
              <a class="nav-link" href="registro.html">Registro</a>
            </li>
+           <li class="nav-item">
+             <a class="nav-link" href="regActividades.php">Registro de Actividades</a>
+           </li>
          </ul>
          
        </div>
