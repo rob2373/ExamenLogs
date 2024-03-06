@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,32 +9,7 @@
     <link rel="shortcut icon" href="https://img.icons8.com/cute-clipart/64/user-male-circle.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/size.css">
-
-    <nav class="navbar navbar-expand-xl  navbar-dark menu-nawigacyjne">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">West</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="registro.html">Registro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="usuarios.php">Usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="regActividades.php">Registro de Actividades</a>
-            </li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
+    <?php include('includes/nav.php') ?>
 </head>
 <body id="body" class="align-items-center vh-100">
     
@@ -49,7 +25,7 @@
                             <div class="container">
                                 <div class="row text-center">
                                 
-                                    <h4 class="card-title ">Registro</h4>
+                                    <h4 class="card-title ">Editar Registro</h4>
                                 </div>
                                 <div class="row align-items-xl-center">
                                    <div class="col-12 align-items-xl-center"> 
@@ -60,27 +36,32 @@
                         
                                     <div class="container mt justify-content-center">
                                         <!-- inicio del formulario login-->
-                                        <form action="register.php" method="post">
-                                          <div class="form-group">
+                                        <form action="update.php" method="post">
+                                        <div class="col-lg-6 ">
+                                                    <div class="form-group">
+
+                                                        <!-- Input nombre del edad -->
+                                                        <input type="hidden" class="form-control" id="id" name="id"   value="<?php echo $id; ?>" >
+                                                    </div>                                            
+                                                </div>
+                                        <div class="form-group"> 
+
                                             <label for="nombre"> <h6>Nombre</h6> </label>
                                             <!-- Input nombre del usuario -->
-                                            <input type="text" class="form-control" id="nombre"   name="nombre" placeholder="Ingresa tu nombre "  required>
-                                          
+                                            <input type="text" class="form-control" id="nombre"   name="nombre"  value="<?php echo $nombre; ?>" required>
+                                         
                                             <label for="apellido"> <h6>Apellido/s</h6> </label>
                                             <!-- Input nombre del apellido -->
-                                            <input type="text" class="form-control" id="apellido"  name="apellido" placeholder="Ingresa tu apellido/s " required>
-                                         
+                                            <input type="text" class="form-control" id="apellido"  name="apellido"  value="<?php echo $apellido; ?>"  required>
+                                      
                                             <label for="email"> <h6>Correo electrónico</h6> </label>
                                             <!-- Input nombre del correo -->
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email " required>
-                                         
+                                            <input type="email" class="form-control" id="email" name="email"  value="<?php echo $email; ?>" required>
+                                          
                                             <label for="username"> <h6>Nombre de usuario</h6> </label>
                                             <!-- Input nombre del  username-->
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
-                                       
-                                            <label for="password"> <h6> Contraseña </h6></label>
-                                            <!-- Input contraseña -->
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                                            <input type="text" class="form-control" id="username" name="username"   value="<?php echo $usuario; ?>" required>
+                                          
                                           </div>
                                         <div class="container">
                                             <div class="row">
@@ -88,7 +69,7 @@
                                                 <div class="form-group">
                                                     <label for="nacimiento"> <h6>Fecha de nacimiento</h6> </label>
                                                     <!-- Input nombre del nacimiento -->
-                                                    <input type="date" class="form-control" id="nacimiento" name="nacimiento">
+                                                    <input type="date" class="form-control" id="nacimiento" name="nacimiento"  value="<?php echo $fecha_na; ?>">
                                                 </div>
                                              </div>
                                         
@@ -97,21 +78,21 @@
 
                                                         <label for="edad"> <h6>Edad</h6> </label>
                                                         <!-- Input nombre del edad -->
-                                                        <input type="number" class="form-control" id="edad" name="edad"  required>
+                                                        <input type="number" class="form-control" id="edad" name="edad"   value="<?php echo $Edad; ?>" required>
                                                     </div>                                            
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
                                             <label for="telefono"> <h6> Teléfono </h6></label>
                                             <!-- Input numTel -->
-                                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+                                            <input type="number" class="form-control" id="telefono" name="telefono"  value="<?php echo $Telefono; ?>"required>
                                           </div>
-                                          <div class="col-12 align-items-xl-center"> 
-                                            <!-- boton de Registros -->
-                                          <button  type="submit" class=" btn btn-primary mt-3 rounded mx-auto d-block"><h5>Registrar </h5></button> 
-                                          <a href="index.php"> <button type="button" class=" btn btn-primary mt-3 rounded mx-auto d-block"> <h5>Login</h5></button> </a>
-                    
+                                          <div class="col-12 align-items-xl-center">
+                                          <!-- boton de Registros -->
+                                            <button type="submit" class="btn btn-warning mt-3 rounded mx-auto d-block"><h5> Guardar Cambios</h5></button>
+                                            <a href="usuarios.php" > <button type="button" class=" btn btn-primary mt-3 rounded mx-auto d-block"> <h5> Volver</h5></button> </a>                    
                                         </div>
                                       
                                         </form>

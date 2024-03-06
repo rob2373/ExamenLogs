@@ -17,7 +17,7 @@ $resultado = mysqli_query($conexion, $query);
 if ($resultado) {
     // Registro de actividad después de la inserción exitosa
     $accion = 'Alta';
-    $descripcion = 'Se agregó un nuevo registro a la base de datos: ' . $nombre . ' ' . $apellido;
+    $descripcion = 'Se agregó un nuevo registro a la base de datos ';
     LOGS($accion, $descripcion);
 
     echo "<h1>Datos insertados correctamente.</h1>";

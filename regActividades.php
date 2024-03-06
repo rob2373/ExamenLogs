@@ -34,7 +34,6 @@
       <th class="bg-dark text-light" scope="col">Descripcion</th>
       <th class="bg-dark text-light" scope="col">Fecha</th>
       
-      <th class="bg-dark text-light" colspan="2" scope="col"> </th>
 
     </tr>
   </thead>
@@ -52,12 +51,6 @@
       <td><?php echo $row['accion'];?></td>
       <td><?php echo $row['descripcion'];?></td>
       <td><?php echo $row['fecha'];?></td>
-      <td> 
-        
-      <a href="" class='btn btn-warning'><img id="edit" src="css/img/iEdit.png" alt="" srcset=""></a>
-      <a href="" class='btn btn-danger'><img  id="edit"  src="css/img/iEliminar.png" alt="" srcset=""></a>
-
-      </td>
 
       </tr>
 

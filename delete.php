@@ -8,6 +8,9 @@ if (isset($_GET["id"])) {
     $result = mysqli_query($conexion, $query);
 
     if ($result) {
+        $accion = 'Baja';
+        $descripcion = 'Se elimino un registro de la base de datos';
+    LOGS($accion, $descripcion);
         header("Location: usuarios.php");
         exit();
     } else {
@@ -17,4 +20,20 @@ if (isset($_GET["id"])) {
     header("Location: usuarios.php");
     exit();
 }
+
+function LOGS($accion, $descripcion)
+{
+    $conexion = conexion();
+    $sql = "INSERT INTO actividades (accion, descripcion, fecha) VALUES ('$accion', '$descripcion', NOW())";
+
+    // Ejecutar la consulta
+    if ($conexion->query($sql) === TRUE) {
+        echo "Actividad registrada con éxito.";
+    } else {
+        echo "Error al registrar la actividad: " . $conexion->error;
+    }
+    
+    $conexion->close();
+}
+
 ?>
