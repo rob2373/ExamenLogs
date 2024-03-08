@@ -17,8 +17,9 @@ $resultado = mysqli_query($conexion, $query);
 if ($resultado) {
     // Registro de actividad después de la inserción exitosa
     $accion = 'Alta';
+    $ip=$_SERVER['REMOTE_ADDR'];
     $descripcion = 'Se agregó un nuevo registro a la base de datos ';
-    LOGS($accion, $descripcion);
+    LOGS($accion, $ip, $descripcion);
 
     echo "<h1>Datos insertados correctamente.</h1>";
     header('Location:./usuarios.php');
@@ -30,10 +31,10 @@ echo ($query);
 
 
 // Función para registrar una actividad en la base de datos
-function LOGS($accion, $descripcion)
+function LOGS($accion, $ip, $descripcion)
 {
     $conexion = conexion();
-    $sql = "INSERT INTO actividades (accion, descripcion, fecha) VALUES ('$accion', '$descripcion', NOW())";
+    $sql = "INSERT INTO actividades (accion, descripcion, Ip, fecha) VALUES ('$accion', '$descripcion','$ip', NOW())";
 
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {

@@ -32,6 +32,7 @@
       <th class="bg-dark text-light" scope="col">#Id</th>
       <th class="bg-dark text-light" scope="col">Acción</th>
       <th class="bg-dark text-light" scope="col">Descripcion</th>
+      <th class="bg-dark text-light" scope="col">Ip</th>
       <th class="bg-dark text-light" scope="col">Fecha</th>
       
 
@@ -42,7 +43,7 @@
   <?php
   include('conexion.php');
   $con = conexion();
-  $consulta = "SELECT * FROM actividades";
+  $consulta = "SELECT * FROM actividades order by id desc";
   $respuesta = mysqli_query($con, $consulta);
     while ($row = mysqli_fetch_array($respuesta)) {?>
     <tr>
@@ -50,6 +51,7 @@
       <th scope="row"><?php echo $row['id'];?></th>
       <td><?php echo $row['accion'];?></td>
       <td><?php echo $row['descripcion'];?></td>
+      <td><?php echo $row['Ip'];?></td>
       <td><?php echo $row['fecha'];?></td>
 
       </tr>

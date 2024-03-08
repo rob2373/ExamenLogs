@@ -31,20 +31,10 @@ CREATE TABLE `actividades` (
   `id` int(11) NOT NULL,
   `accion` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
+  `Ip` varchar(20) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `actividades`
---
-
-INSERT INTO `actividades` (`id`, `accion`, `descripcion`, `fecha`) VALUES
-(1, 'Baja', 'Se elimino un registro de la base de datos', '2024-03-06 00:07:26'),
-(2, 'Alta', 'Se agregó un nuevo registro a la base de datos ', '2024-03-06 00:07:42');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `registro`
 --
 

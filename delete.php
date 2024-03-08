@@ -9,23 +9,23 @@ if (isset($_GET["id"])) {
 
     if ($result) {
         $accion = 'Baja';
+        $ip=$_SERVER['REMOTE_ADDR'];
         $descripcion = 'Se elimino un registro de la base de datos';
-    LOGS($accion, $descripcion);
+        LOGS($accion, $ip, $descripcion);
         header("Location: usuarios.php");
         exit();
     } else {
-        echo "Error al eliminar tenis: " . mysqli_error($conexion);
+        echo "Error al eliminar este registro: " . mysqli_error($conexion);
     }
 } else {
     header("Location: usuarios.php");
     exit();
 }
 
-function LOGS($accion, $descripcion)
+function LOGS($accion, $ip, $descripcion)
 {
     $conexion = conexion();
-    $sql = "INSERT INTO actividades (accion, descripcion, fecha) VALUES ('$accion', '$descripcion', NOW())";
-
+    $sql = "INSERT INTO actividades (accion, descripcion, Ip, fecha) VALUES ('$accion', '$descripcion','$ip', NOW())";
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {
         echo "Actividad registrada con éxito.";

@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($con, $update);
     
     if ($result) {
-        $accion = 'Actualización';
+        $accion = 'Cambio';
+        $ip=$_SERVER['REMOTE_ADDR'];
         $descripcion = 'Se actualizo un registro de la base de datos';
-    LOGS($accion, $descripcion);
+    LOGS($accion, $ip, $descripcion);
         header("Location: usuarios.php");
         exit();
     } else {
@@ -50,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: usuarios.php");
     exit();
 }
-function LOGS($accion, $descripcion)
+function LOGS($accion, $ip, $descripcion)
 {
     $conexion = conexion();
-    $sql = "INSERT INTO actividades (accion, descripcion, fecha) VALUES ('$accion', '$descripcion', NOW())";
+    $sql = "INSERT INTO actividades (accion, descripcion, Ip, fecha) VALUES ('$accion', '$descripcion','$ip', NOW())";
 
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {
