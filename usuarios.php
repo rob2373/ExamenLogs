@@ -65,7 +65,7 @@
       echo "<td> 
         
       <a href='update.php?id={$row['id']}' class='btn btn-warning'><img id='edit' src='css/img/iEdit.png' alt='' srcset=''></a>
-      <a href='delete.php?id={$row['id']}'' class='btn btn-danger'><img  id='edit'  src='css/img/iEliminar.png' alt='' srcset=''></a>
+      <a href='delete.php?id={$row['id']}'' class='btn btn-danger' onclick='return checkdelete()'><img  id='edit'  src='css/img/iEliminar.png' alt='' srcset=''></a>
 
       </td>"
       ?>
@@ -81,4 +81,6 @@
    </div>
  </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- </html>
+ 
+<script src="index.js"></script>
+</html>

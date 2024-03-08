@@ -91,7 +91,7 @@
                                           </div>
                                           <div class="col-12 align-items-xl-center">
                                           <!-- boton de Registros -->
-                                            <button type="submit" class="btn btn-warning mt-3 rounded mx-auto d-block"><h5> Guardar Cambios</h5></button>
+                                            <button type="submit" class="btn btn-warning mt-3 rounded mx-auto d-block" onclick=" return  checkupdate()"><h5> Guardar Cambios</h5></button>
                                             <a href="usuarios.php" > <button type="button" class=" btn btn-primary mt-3 rounded mx-auto d-block"> <h5> Volver</h5></button> </a>                    
                                         </div>
                                       
@@ -111,4 +111,6 @@
                 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+
 </html>
