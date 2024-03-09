@@ -24,9 +24,10 @@
 
    
    <div class="container">
-    <div class="row ">
-        <div class="col-12 text-center">
-        <table id="tabla" class="table">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="table-responsive">
+                    <table id="tabla" class="table">
   <thead >
     <tr>
       <th class="bg-dark text-light" scope="col">#Id</th>
@@ -59,10 +60,11 @@
     <?php } ?>
    
   </tbody>
-</table>
+  </table>
+                </div>
+            </div>
         </div>
     </div>
-   </div>
  </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  </html>
